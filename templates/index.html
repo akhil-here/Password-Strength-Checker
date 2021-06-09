@@ -2,16 +2,25 @@
 <html lang="en">
 
 <head>
-    <title>Home page</title>
+    <title>Password Strength 🏨</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <style>
+        .alert {
+            background: green;
+            padding: 1rem;
+            border-radius: 5px;
+            color: white;
+            margin: 1rem;
+        }
+    </style>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
 <body>
+
     <div class="min-vh-100 d-flex" style=" 
     background-image: url('../static/home.webp');
     height: 100%; 
@@ -21,16 +30,18 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-5"></div>
-                <div class="col-md-7 mt-3">
-                    <h1 style="color:#ffdcdc; margin-top: 8rem;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">Password Strength Checker</h1>
-                    <!-- <div className="card shadow animate__fadeIn animate__animated" style="backdropFilter: blur(10px); background: rgba(255,255,255,.7); borderRadius: 1rem; minWidth: 40vw; minHeight: 60vh; border: none; overflow: hidden">
-                    </div> -->
-                    <div class="form-group">
+                <div class="col-md-7 mt-5">
+                    <h1 style="color:#ffdcdc; margin-top: 3rem;font-size:4rem;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">Password Strength Checker</h1>
+                    <form action="/check" method="POST">
+
                         <label for="pwd" style="margin-top: 3rem; color:white;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">Enter your password</label>
                         <input type="password" class="form-control" name="pwd" id="pwd" placeholder="">
-                    </div>
-                    <button type="button" class="btn btn-outline-primary float-right">Check</button>
 
+                        <input type="submit" class="btn btn-danger float-right mt-3" value="Calculate" id="calc_btn" />
+                        <h1 style="color:#ffdcdc; margin-top: 2rem;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">
+                            {{ strength }}
+                        </h1>
+                    </form>
                 </div>
             </div>
 
