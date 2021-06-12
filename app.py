@@ -9,12 +9,12 @@ def display():
 
 
 @app.route("/check", methods=['POST'])
-def check_strength(strength=strength):
+def check_strength(sum=sum):
     if request.method == 'POST':
         password = request.form['pwd']
-        return render_template('index.html', strength="Strong!!")
+        return render_template('index.html', sum="Strong!!")
     else:
-        return render_template('index.html', strength=" ")
+        return render_template('index.html', sum=" ")
 
 
 if __name__ == '__main__':
