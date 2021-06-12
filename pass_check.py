@@ -59,13 +59,7 @@ def main():
     X = vectorize(word_divide, x)
     m = model(X, y)
     vectorizer = TfidfVectorizer(tokenizer=word_divide)
-    return vectorizer
+    return vectorizer, x, m
 
 
-vectorizer = main()
-
-password = input('Enter your password: ')
-x.append(password)
-ip = vectorizer.fit_transform(x)
-ans = m.predict(ip)
-ans[-1]
+vectorizer, x, m = main()
